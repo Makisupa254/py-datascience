@@ -6,4 +6,3 @@ def increment(x):
 
 def hello():
     return "world";
-#what the fuck is going on?
