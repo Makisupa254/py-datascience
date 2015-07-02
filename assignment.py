@@ -9,7 +9,7 @@ def read_file(filename):
 			lines.append(line)
 	return lines
 
-a = read_file("NBA 14-15 Game Log.csv")
+data = read_file('data/NBA1415GameLog.csv')
 	
 def print_csv(data):
 	for line in data:
@@ -21,26 +21,37 @@ def prob_01(data):
 	for row in data:
 		count += 1
 	return count
-print(prob_01(a))
+print(prob_01(data))
 
 # Get the name of the first player in the file
 def prob_02(data):
-	name = a[0]
-	return name
-print(prob_02(a))
+	for line in data: 
+		name = line["PLAYER FULL NAME"]
+		return name
+print(prob_02(data))
 	
 # Get the date on the last line in the file
 def prob_03(data):
-	date = lines[DATE]
+	for line in data:
+		date = line["DATE"]
 	return date
+print(prob_03(data))
 	
-# Get the 100th player's name
 def prob_04(data):
-	
-	return name
+	for line in data: 
+		if line == data[99]:
+			name = line["PLAYER FULL NAME"]
+			return name
+print(prob_04(data))
 
 # Get a list of the unique OWN_TEAM elements in the file
 def prob_05(data):
 	teams = []
-	
-	return teams
+	uniqueteams = set()
+	uniqueteamslist = []
+	for row in data:
+		teams.append(row["OWN TEAM"])
+	uniqueteams = set(teams)
+	uniqueteamslist = list(uniqueteams)
+	return uniqueteamslist
+print(prob_05(data))
