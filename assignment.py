@@ -30,25 +30,22 @@ print(prob_01(data))
 
 # Get the name of the first player in the file using the column name (PLAYER FULL NAME)
 def prob_02(data):
-	for line in data: 
-		name = line["PLAYER FULL NAME"]
-		return name
+	name = data[0]["PLAYER FULL NAME"]
+	print name
 print(prob_02(data))
 	
 # Get the date on the last line in the file using the column name (DATE)
 def prob_03(data):
-	for line in data:
-		date = line["DATE"]
-	return date
+	x = prob_01(data) - 1
+	return data[x]["DATE"]
 print(prob_03(data))
 	
 # Get the 100th player's name using the column name (PLAYER FULL NAME)
-def prob_04(data):
-	for line in data: 
-		if line == data[99]:
-			name = line["PLAYER FULL NAME"]
-			return name
-print(prob_04(data))
+def prob_04(data, y):
+	z = z -1
+	name = data[z]["PLAYER FULL NAME"]
+	print name
+print(prob_06(data,100))
 
 # Get an array of the unique OWN_TEAM elements in the file
 def prob_05(data):
